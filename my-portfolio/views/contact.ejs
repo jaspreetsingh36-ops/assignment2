@@ -1,2 +1,122 @@
-﻿<h1>Contact Me</h1>
-<p>This is the contact page content.</p>
+﻿<div class="row">
+  <div class="col-md-8">
+    <h1>Contact Me</h1>
+    <p>I'm always interested in new opportunities and collaborations. Feel free to reach out!</p>
+
+    <form id="contactForm" onsubmit="return validateForm()">
+      <div class="mb-3">
+        <label for="name" class="form-label">Name *</label>
+        <input type="text" class="form-control" id="name" required>
+        <div class="invalid-feedback">Please enter your name.</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="email" class="form-label">Email *</label>
+        <input type="email" class="form-control" id="email" required>
+        <div class="invalid-feedback">Please enter a valid email address.</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="subject" class="form-label">Subject *</label>
+        <input type="text" class="form-control" id="subject" required>
+        <div class="invalid-feedback">Please enter a subject.</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="message" class="form-label">Message *</label>
+        <textarea class="form-control" id="message" rows="5" required></textarea>
+        <div class="invalid-feedback">Please enter your message.</div>
+      </div>
+
+      <!-- Enhanced I'm not a robot verification -->
+      <div class="mb-4">
+        <div class="robot-check-container text-center p-4 rounded">
+          <div class="form-check d-inline-block">
+            <input type="checkbox" class="form-check-input robot-checkbox" id="notRobot" required>
+            <label class="form-check-label robot-label" for="notRobot">
+              <i class="fas fa-robot me-2"></i>I'm not a robot
+            </label>
+            <div class="invalid-feedback mt-2">Please confirm you are not a robot to continue.</div>
+          </div>
+
+          <!-- Math challenge box -->
+          <div id="robotChallenge" class="mt-3 d-none">
+            <label class="form-label">Prove you’re human: <span id="mathQuestion"></span></label>
+            <input type="number" id="mathAnswer" class="form-control w-50 mx-auto" placeholder="Your answer">
+            <div class="invalid-feedback">Incorrect answer. Try again!</div>
+          </div>
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
+      <div class="mt-2">
+        <small class="text-muted">* Required fields</small>
+      </div>
+    </form>
+  </div>
+
+  <div class="col-md-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Contact Information</h5>
+        <p><i class="fas fa-envelope me-2"></i> jaspreet.singh@gmail.com</p>
+        <p><i class="fab fa-github me-2"></i> github.com/jaspreetsingh36-ops</p>
+        <p><i class="fab fa-linkedin me-2"></i> linkedin.com/in/jaspreet-singh</p>
+        <p><i class="fas fa-map-marker-alt me-2"></i> Available for remote opportunities</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- JavaScript -->
+<script>
+function validateForm() {
+  let valid = true;
+  ['name','email','subject','message'].forEach(id => {
+    const el = document.getElementById(id);
+    if (!el.value.trim()) valid = false;
+    el.classList.toggle('is-invalid', !el.value.trim());
+  });
+  const email = document.getElementById('email');
+  if (email.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
+    email.classList.add('is-invalid'); valid = false;
+  }
+  const notRobot = document.getElementById('notRobot');
+  const robotContainer = document.querySelector('.robot-check-container');
+  if (!notRobot.checked) {
+    notRobot.classList.add('is-invalid');
+    robotContainer.classList.add('robot-error');
+    valid = false;
+  } else {
+    notRobot.classList.remove('is-invalid');
+    robotContainer.classList.remove('robot-error');
+    robotContainer.classList.add('robot-success');
+  }
+  if (valid) {
+    alert('Thank you!');
+    document.getElementById('contactForm').reset();
+    ['name','email','subject','message'].forEach(id => document.getElementById(id).classList.remove('is-invalid'));
+    notRobot.classList.remove('is-invalid');
+    robotContainer.classList.remove('robot-success', 'robot-error');
+  }
+  return false;
+}
+
+function isValidEmail(email) {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  const notRobot = document.getElementById('notRobot');
+  const robotContainer = document.querySelector('.robot-check-container');
+  notRobot.addEventListener('change', function() {
+    if (this.checked) {
+      robotContainer.classList.add('robot-success');
+      robotContainer.classList.remove('robot-error');
+    } else {
+      robotContainer.classList.remove('robot-success');
+    }
+  });
+});
+</script>
