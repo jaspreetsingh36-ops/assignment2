@@ -1,43 +1,110 @@
-﻿<div class="row">
-    <div class="col-md-6">
-        <h1>About Me</h1>
-        <p class="lead">Networking & IT Security Student passionate about cybersecurity and technology.</p>
-        <p>I'm currently pursuing my education in Networking and IT Security, with a strong focus on cybersecurity principles, network infrastructure, and secure software development. I enjoy solving complex problems and building secure, efficient systems.</p>
-        
-        <h3 class="mt-4">Skills & Technologies</h3>
-        <div class="row">
+﻿<!-- About Section -->
+<section id="about" class="py-5">
+    <div class="container">
+        <div class="row align-items-center">
             <div class="col-md-6">
-                <ul class="list-unstyled">
-                    <li><i class="fas fa-check text-success me-2"></i>Java</li>
-                    <li><i class="fas fa-check text-success me-2"></i>Python</li>
-                    <li><i class="fas fa-check text-success me-2"></i>Network Security</li>
-                    <li><i class="fas fa-check text-success me-2"></i>Cybersecurity</li>
-                </ul>
-            </div>
-            <div class="col-md-6">
-                <ul class="list-unstyled">
-                    <li><i class="fas fa-check text-success me-2"></i>Linux Administration</li>
-                    <li><i class="fas fa-check text-success me-2"></i>Web Development</li>
-                    <li><i class="fas fa-check text-success me-2"></i>Database Management</li>
-                    <li><i class="fas fa-check text-success me-2"></i>Problem Solving</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-6">
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">Education</h5>
-                <p><strong>Networking & IT Security</strong><br>
-                Currently pursuing degree with focus on cybersecurity and network infrastructure.</p>
+                <h1 class="section-title">About Me</h1>
+                <p class="lead">Networking & IT Security Student passionate about cybersecurity and cloud technologies.</p>
+                <p>I'm currently pursuing my education in Networking and IT Security, with a strong focus on cybersecurity principles, network infrastructure, and secure software development. I'm expanding my expertise in Azure cloud services and working toward CCNP certification while developing practical applications in JavaScript and Python.</p>
                 
-                <h5 class="card-title mt-4">Certifications</h5>
-                <ul>
-                    <li>Network+ (In Progress)</li>
-                    <li>Security+ (Planned)</li>
-                    <li>Python Programming Certification</li>
-                </ul>
+                <h3 class="mt-4">Skills & Technologies</h3>
+                <div class="row">
+                    <div class="col-md-6">
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check text-success me-2"></i>JavaScript</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Python</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Java</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Network Security</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Cybersecurity</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check text-success me-2"></i>Azure Cloud (AZ-900)</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Linux Administration</li>
+                            <li><i class="fas fa-check text-success me-2"></i>OSPF/EIGRP Protocols</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Web Development</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Problem Solving</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Education & Certifications</h5>
+                        <p><strong>Networking & IT Security</strong><br>
+                        Currently pursuing degree with focus on cybersecurity and network infrastructure.</p>
+                        
+                        <h5 class="card-title mt-4">Completed Certifications</h5>
+                        <ul>
+                            <li><i class="fas fa-award text-warning me-2"></i>Azure Cloud (AZ-900)</li>
+                            <li><i class="fas fa-award text-warning me-2"></i>Python Programming Certification</li>
+                        </ul>
+                        
+                        <h5 class="card-title mt-4">In Progress</h5>
+                        <ul>
+                            <li><i class="fas fa-spinner text-info me-2"></i>CCNP Certification</li>
+                            <li><i class="fas fa-spinner text-info me-2"></i>Network+</li>
+                            <li><i class="fas fa-spinner text-info me-2"></i>Security+</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card mt-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Technical Focus Areas</h5>
+                        <div class="d-flex flex-wrap">
+                            <span class="skill-badge">Cloud Computing</span>
+                            <span class="skill-badge">Network Protocols</span>
+                            <span class="skill-badge">JavaScript Development</span>
+                            <span class="skill-badge">Python Programming</span>
+                            <span class="skill-badge">Cybersecurity</span>
+                            <span class="skill-badge">Virtualization</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</div>
+</section>
+
+<style>
+.section-title {
+    position: relative;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
+
+.section-title:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background-color: #3498db;
+}
+
+.skill-badge {
+    display: inline-block;
+    background-color: #e9ecef;
+    color: #495057;
+    padding: 5px 12px;
+    border-radius: 15px;
+    margin: 5px;
+    font-size: 0.85rem;
+    border: 1px solid #dee2e6;
+}
+
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+</style>
